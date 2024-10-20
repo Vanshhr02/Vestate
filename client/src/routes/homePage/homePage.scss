@@ -1,0 +1,81 @@
+@import "../../responsive.scss";
+
+.homePage {
+  display: flex;
+  height: 100vh;
+  justify-content: center; // Centers content vertically
+  align-items: center; // Centers content horizontally
+  position: relative;
+    
+    // Video background styling
+    .backgroundVideo {
+      position: absolute;
+      top: 100;
+      left: 100;
+      width: 100vw;
+      height: 100vh;
+   
+      object-fit: cover; // Ensure the video covers the entire background
+      z-index: -1; // Ensure the video stays behind the content
+    }
+
+  .textContainer {
+    flex: 3;
+    z-index: 2; // Ensure the text stays on top of images
+
+    .wrapper {
+      padding-right: 100px;
+      padding-left: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 50px;
+      height: 100%;
+
+      @include lg {
+        padding-right: 50px;
+      }
+
+      @include md {
+        padding: 0;
+      }
+
+      @include sm {
+        justify-content: flex-start;
+      }
+
+      .title {
+        font-size: 64px;
+        //color: white; // Ensure the text stands out on the video
+        @include lg {
+          font-size: 48px;
+        }
+      }
+
+      .boxes {
+        display: flex;
+        justify-content: space-between;
+
+        @include sm {
+          display: none;
+        }
+
+        h1 {
+          font-size: 36px;
+          color: white; // Make sure it contrasts with the background
+          @include lg {
+            font-size: 32px;
+          }
+        }
+
+        h2 {
+          font-size: 20px;
+          font-weight: 300;
+          color: white; // Make sure it contrasts with the background
+        }
+      }
+    }
+  }
+
+  
+}
